@@ -1,0 +1,25 @@
+﻿<UserControl xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/printing"  x:Class="E3422.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:E3422"             
+    mc:Ignorable="d"
+    d:DesignHeight="800" d:DesignWidth="600">
+
+    <UserControl.DataContext>
+        <local:MainPageViewModel
+            ReportServiceUri="../DemoReportService.svc"
+            ReportName="Reports.SampleReport, Reports"
+            ParameterValue="Report Parameter Value" />
+    </UserControl.DataContext>
+
+    <StackPanel x:Name="LayoutRoot" Background="White">
+        <Button Content="Show preview" Command="{Binding ShowPreviewCommand}" />
+        <TextBlock Text="OR" HorizontalAlignment="Center" Margin="0, 25, 0, 25" />
+        <Button Content="Print" Command="{Binding PrintCommand}" />
+        <Button Content="Export to PDF file" Command="{Binding ExportCommand}"/>
+        <!--<Button Content="Export to window" Command="{Binding ExportToWindowCommand}" />-->
+        <TextBox Text="{Binding ParameterValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+    </StackPanel>
+</UserControl>
