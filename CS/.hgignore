@@ -1,0 +1,10 @@
+syntax: glob
+**.suo
+E3422.Web/ClientBin
+E3422.Web/bin
+E3422.Web/obj
+E3422/Bin
+**.user
+E3422/obj
+Reports/bin
+Reports/obj
